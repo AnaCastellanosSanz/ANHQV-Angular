@@ -1,0 +1,99 @@
+<form
+    *ngIf="creationForm"
+    class="form"
+    (submit)="createNewCreation()"
+    [formGroup]="creationForm"
+    name="creation"
+>
+
+<div class="field-container">
+    <input
+        class="form__input"
+        placeholder="Imagen"
+        name="imagen"
+        required
+        formControlName="imagen"
+    >
+    <p
+        *ngIf="!creationForm.get('imagen')?.valid && creationForm.get('imagen')?.touched"
+        class="input-error"
+    >El valor está requerido</p>
+</div> 
+   <div class="field-container">
+        <input
+            class="form__input"
+            placeholder="Nombre"
+            type="text"
+            required
+            formControlName="nombre"
+        >
+        <p
+            *ngIf="!creationForm.get('nombre')?.valid
+                && creationForm.get('nombre')?.dirty
+                && creationForm.get('nombre')?.errors?.['required']
+            "
+            class="input-error"
+        >El valor está requerido</p>
+        <p
+            *ngIf="!creationForm.get('nombre')?.valid
+                && creationForm.get('nombre')?.dirty
+                && creationForm.get('nombre')?.errors?.['pattern']
+            "
+            class="input-error"
+        >El nombre debe incluir solo letras</p>
+   </div>
+
+   <div class="field-container">
+    <input
+        class="form__input"
+        placeholder="Cita Celebre"
+        type="text"
+        required
+        formControlName="citaCelebre"
+    >
+    <p
+        *ngIf="!creationForm.get('citaCelebre')?.valid
+            && creationForm.get('citaCelebre')?.dirty
+            && creationForm.get('citaCelebre')?.errors?.['required']
+        "
+        class="input-error"
+    >El valor está requerido</p>
+</div>
+<div class="field-container">
+    <input
+        class="form__input"
+        placeholder="Actor / Actriz"
+        type="text"
+        required
+        formControlName="actorActriz"
+    >
+    <p
+        *ngIf="!creationForm.get('actorActriz')?.valid
+            && creationForm.get('actorActriz')?.dirty
+            && creationForm.get('actorActriz')?.errors?.['required']
+        "
+        class="input-error"
+    >El valor está requerido</p>
+</div>
+
+<div class="field-container">
+    <textarea
+        required
+        class="form__input form__textarea"
+        placeholder="Descripción"
+        name="descripcion"
+        formControlName="descripcion"
+    ></textarea>
+    <p
+        *ngIf="!creationForm.get('descripcion')?.valid && creationForm.get('descripcion')?.touched"
+        class="input-error"
+    >El valor está requerido</p>
+</div>
+    <button
+        class="form__button"
+        type="submit"
+    >
+        {{ canEdit ? 'Editar creación' : 'Crear nuevo personaje' }}
+    </button>
+</form>
+

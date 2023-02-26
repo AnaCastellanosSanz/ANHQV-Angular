@@ -1,0 +1,22 @@
+<!---*ngIf="character" solo se pinta el div del personaje si hay un personaje, se le pasa a ngIf la variable publica character.-->
+<div
+    *ngIf="character"
+    class="character"
+>
+    <img class="character__img" src="{{ character.imagen }}" alt="Image" />
+    <div class="character__info">
+        <p class="character__name">{{ character.nombre }}</p>
+        <p class="character__episodios">{{ character.episodios.title }}</p>
+    </div>
+    <div class="character__buttons">
+        <button
+            class="character__button character__button--remove"
+            (click)="removeCharacter()"
+        >Eliminar</button>
+        <button
+            (click)="navigateToDetail()"
+            class="character__button"
+        >Ver más</button>
+        <button class="character__button" (click)="editCharacter()">Editar</button>
+    </div>
+</div>

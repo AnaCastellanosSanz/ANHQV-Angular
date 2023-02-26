@@ -1,0 +1,45 @@
+.episodio {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 5%;
+}
+.episodio .episodio__info {
+  margin-top: 10px;
+  text-align: center;
+}
+.episodio .episodio__info .episodio__name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+@media screen and (max-width: 640px) {
+  .episodio .episodio {
+    margin-top: 10%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .episodio .episodio {
+    padding: 5px;
+  }
+  .episodio .episodio__info {
+    margin-top: 5px;
+  }
+  .episodio .episodio__info .episodio__name {
+    font-size: 16px;
+  }
+  .episodio .episodio__info .episodio_description {
+    width: 350px;
+  }
+  .episodio .episodio__info .episodio_video {
+    width: 350px;
+  }
+}/*# sourceMappingURL=episodio.component.css.map */

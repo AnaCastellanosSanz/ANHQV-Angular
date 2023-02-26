@@ -1,0 +1,16 @@
+body {
+  background-color: black;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(6, 6, 6, 0.7)), url(https://anhqv.es/wp-content/uploads/2017/09/edifisioanhqv2017.jpg);
+  background-size: cover;
+  font-family: "Sofia Sans", sans-serif;
+  background-attachment: fixed;
+  margin-bottom: 10%;
+}
+@media (max-width: 1430px) {
+  body {
+    background-size: cover;
+  }
+}
+body ul {
+  list-style-type: none;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,18 @@
+
+<!--- Se define un formulario con una etiqueta de un campo de correo electrónico, seguido de un campo de contraseña. Ambos campos tienen algunas restricciones de validación: para el campo de correo electrónico, la validación es el formato de correo electrónico, mientras que para la contraseña, la restricción es una longitud mínima de 8 caracteres. Una vez que el usuario haya ingresado los datos en los campos, se puede hacer clic en el botón "Login" para iniciar sesión. Sin embargo, el botón estará deshabilitado hasta que el formulario sea válido.-->
+
+<form #formulario="ngForm">
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="email" name="email" required [email]="true">
+    </div>
+  
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" [(ngModel)]="password" name="password" required [minlength]="8">
+    </div>
+  
+    <button type="button" (click)="loginUser()" [disabled]="!formulario.valid">Login</button>
+  </form>
+  
+

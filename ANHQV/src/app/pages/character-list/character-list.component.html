@@ -1,0 +1,36 @@
+
+<div class="filter">
+  <input class="input_filter" placeholder="Filtra por nombre" [(ngModel)]="characterName">
+  <select
+      name="characters"
+      required
+      [(ngModel)]="characterEpisodios"
+  >
+      <option default value="">Episodio</option>
+      <option
+          *ngFor="let episodio of episodiosEl"
+          [value]="episodio"
+      >{{ episodio }}</option>
+  </select>
+</div>
+
+<div
+    class="character-list" 
+    *ngIf="characters$">
+
+    
+  <!-- [character] es el nombre del input (onRemove)="removeCharacterFromList(characterEl.id)"-->
+    <app-character
+        *ngFor="let characterEl of characters$ | async | filter:characterName:characterEpisodios | pagination:pagina"
+        [character]="characterEl"
+        (onRemove)="removeCharacterFromList(characterEl.id)"
+    ></app-character>
+    <button class="button__character" (click)="navigateToCreateCharacter()">Añadir personaje</button>
+</div>
+
+<div class="pagination-container">
+    <div class="pagination-button">
+      <button [ngStyle]="pagina <= 0 ? {'display': 'none'} : null" (click)="prevPage()" class="btn">Previous</button>
+      <button [ngStyle]="pagina >= 80 ? {'display': 'none'} : null" (click)="nextPage()" class="btn">Next</button>
+    </div>
+  </div>

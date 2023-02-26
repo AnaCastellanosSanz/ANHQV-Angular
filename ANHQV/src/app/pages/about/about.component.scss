@@ -1,0 +1,41 @@
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 40px;
+    height: 590px;
+    color: white;
+}
+.texto{
+    font-size: xx-large;
+
+}
+.nombre{
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    
+    .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 40px;
+    color: white;
+    }
+    
+    .texto {
+    font-size: xx-large;
+    }
+    
+    .nombre {
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    }
+
+}

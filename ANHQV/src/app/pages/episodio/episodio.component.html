@@ -1,0 +1,22 @@
+
+<div
+*ngFor="let episodio of episodios"
+class="episodio">
+<div class="episodio__info">
+  <p class="episodio__name">
+    {{episodio.title}}
+  </p>
+  <p class="episodio_description">
+    {{episodio.description}}
+  </p>
+
+  <video #videoPlayer class="episodio_video" [src]= "episodio.video" width="640" height="360">
+  </video>
+  <div class="episodio-container">
+    <div class="episodio-botones">
+      <button (click)="playVideo(videoPlayer)" class="btn-reproducir">Reproducir</button>
+      <button (click)="pauseVideo(videoPlayer)" class="btn-pausar">Pausar</button>
+    </div>
+  </div>
+</div>
+</div>

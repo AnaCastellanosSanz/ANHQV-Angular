@@ -1,0 +1,48 @@
+
+<!-- El routerlink debe ir siempre entre a (enlaces) -->
+
+
+<div class="header__div" [ngClass]="{ 'header__div--menu-open': isOpen }">
+    <a
+      class="header__link"
+      [routerLink]="['home']"
+    >Home</a>
+    <a
+      class="header__link"
+      [routerLink]="['character-list']"
+    >Listado de personajes</a>
+    <a
+      class="header__link"
+      [routerLink]="['create-character']"
+    >Nuevo personaje</a>
+  <a
+    class="header__link"
+    [routerLink]="['creations']"
+  > Mis creaciones</a>
+  <a
+  class="header__link"
+  [routerLink]="['create-creations']"
+>Nueva creación</a>
+  <a
+  class="header__link"
+  [routerLink]="['episodios']"
+  >Episodios</a>
+  <a
+  class="header__link"
+  [routerLink]="['about']"
+> Sobre mi</a>
+  <a
+  *ngIf="!isLogged"
+  class="header__link"
+  [routerLink]="['login']"
+  >Login</a>
+<a
+  *ngIf="isLogged"
+  class="header__link"
+  [routerLink]="['account']"
+  >Mi cuenta</a>
+    <button class="header__menu-toggle" (click)="toggleMenu()">
+      <i class="bars"></i>
+    </button>
+  </div>
+  

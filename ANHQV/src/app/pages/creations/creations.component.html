@@ -1,0 +1,10 @@
+<div class="creation" *ngIf="creations && creations.length > 0; else noCreationsFound">
+    <app-creation
+        *ngFor="let creation1 of creations"
+        [creation]="creation1"
+        (onRemove)="removeCreation(creation1.id)"
+    ></app-creation>
+</div>
+<ng-template #noCreationsFound>
+<p>Error: No se han encontrado creaciones para mostrar.</p>
+</ng-template>

@@ -1,0 +1,12 @@
+<div class="character-detail" *ngIf="character; else characterNotFound">
+    <img class="character-detail__image" [src]="character.imagen">
+    <p class="character-detail__nombre">{{ character.nombre }}</p>
+    <p class="character-descripcion">{{ character.descripcion}}</p>
+    <p class="character-citaCelebre">{{ character.citaCelebre}}</p>
+    <p class="character-actorActriz"> Actor/Actriz: {{ character.actorActriz}}</p>
+</div>
+<button class="buttonPlay" (click)="back()">Volver al Listado</button>
+
+<ng-template #characterNotFound>
+    <p  class="characterNotFound">No existe un personaje con este id</p>
+</ng-template>

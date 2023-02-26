@@ -1,0 +1,29 @@
+<div *ngIf="creation; else error" ></div>
+
+<div
+    *ngIf="creation"
+    class="creation"
+>
+    <div class="creation-info" *ngIf="creation">
+        <img class="creation__img" [src]="creation.imagen">
+        <p class="creation__name">{{ creation.nombre }}</p>
+        <p class="creation-descripcion">{{ creation.descripcion}}</p>
+        <p class="creation-citaCelebre">{{ creation.citaCelebre}}</p>
+        <p class="creation-actorActriz"> Actor/Actriz: {{ creation.actorActriz}}</p>
+    </div>
+    <div class="creation__buttons">
+        <button
+            class="creation__button creation__button--remove"
+            (click)="removeCreation()"
+        >Eliminar</button>
+        <button
+            (click)="editCreation()"
+            class="creation__button"
+        >Editar</button>
+       
+    </div>
+</div>
+
+<ng-template #error>
+    <p>No se pudieron cargar las creaciones.</p>
+</ng-template>

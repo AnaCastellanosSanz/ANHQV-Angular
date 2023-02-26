@@ -1,0 +1,129 @@
+<form
+    *ngIf="characterForm"
+    class="form"
+    (submit)="createNewCharacter()"
+    [formGroup]="characterForm"
+    name="character"
+>
+
+<div class="field-container">
+    <input
+        class="form__input"
+        placeholder="Imagen"
+        name="imagen"
+        required
+        formControlName="imagen"
+    >
+    <p
+        *ngIf="!characterForm.get('imagen')?.valid && characterForm.get('imagen')?.touched"
+        class="input-error"
+    >El valor está requerido</p>
+</div> 
+   <div class="field-container">
+        <input
+            class="form__input"
+            placeholder="Nombre"
+            type="text"
+            required
+            formControlName="nombre"
+        >
+        <p
+            *ngIf="!characterForm.get('nombre')?.valid
+                && characterForm.get('nombre')?.dirty
+                && characterForm.get('nombre')?.errors?.['required']
+            "
+            class="input-error"
+        >El valor está requerido</p>
+        <p
+            *ngIf="!characterForm.get('nombre')?.valid
+                && characterForm.get('nombre')?.dirty
+                && characterForm.get('nombre')?.errors?.['pattern']
+            "
+            class="input-error"
+        >El nombre debe incluir solo letras</p>
+   </div>
+
+   <div class="field-container">
+    <input
+        class="form__input"
+        placeholder="Cita Celebre"
+        type="text"
+        required
+        formControlName="citaCelebre"
+    >
+    <p
+        *ngIf="!characterForm.get('citaCelebre')?.valid
+            && characterForm.get('citaCelebre')?.dirty
+            && characterForm.get('citaCelebre')?.errors?.['required']
+        "
+        class="input-error"
+    >El valor está requerido</p>
+</div>
+<div class="field-container">
+    <input
+        class="form__input"
+        placeholder="Actor / Actriz"
+        type="text"
+        required
+        formControlName="actorActriz"
+    >
+    <p
+        *ngIf="!characterForm.get('actorActriz')?.valid
+            && characterForm.get('actorActriz')?.dirty
+            && characterForm.get('actorActriz')?.errors?.['required']
+        "
+        class="input-error"
+    >El valor está requerido</p>
+</div>
+
+   
+   <div class="field-container">
+    <select
+        class="form__input form__select"
+        name="episodios"
+        required
+        formControlName="episodios"
+    >
+        <option default value="">Episodio</option>
+        <option
+            *ngFor="let episodio of episodiosEl"
+            [value]="episodio"
+        >{{ episodio }}</option>
+    </select>
+    <p
+        *ngIf="
+            !characterForm.get('episodios')?.valid
+            && characterForm.get('episodios')?.touched
+            && characterForm.get('episodios')?.errors?.['required']
+        "
+        class="input-error"
+    >El valor está requerido</p>
+    <p
+        *ngIf="
+            !characterForm.get('episodios')?.valid
+            && characterForm.get('episodios')?.touched
+            && characterForm.get('episodios')?.errors?.['isincredible']
+        "
+        class="input-error"
+    >Hazte premium para ver este capítulo </p>
+</div> 
+<div class="field-container">
+    <textarea
+        required
+        class="form__input form__textarea"
+        placeholder="Descripción"
+        name="descripcion"
+        formControlName="descripcion"
+    ></textarea>
+    <p
+        *ngIf="!characterForm.get('descripcion')?.valid && characterForm.get('descripcion')?.touched"
+        class="input-error"
+    >El valor está requerido</p>
+</div>
+    <button
+        class="form__button"
+        type="submit"
+    >
+        {{ canEdit ? 'Editar personaje' : 'Crear personaje' }}
+    </button>
+</form>
