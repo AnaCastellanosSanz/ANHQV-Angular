@@ -16,6 +16,7 @@ import { CharactersService } from 'src/app/core/services/characters/characters.s
 export class CreateCharacterComponent {
 
   //El componente contiene una propiedad characterForm que es de tipo FormGroup. El FormGroup es un grupo de campos de formulario que contiene una lógica común. Cada campo del formulario se define como un FormControl, que es un campo específico de nuestro formulario con cierta lógica especial que se puede utilizar desde TypeScript.
+  
   public characterForm?: FormGroup;
   public episodiosEl: CharacterEpisodios[] = episodios;
   public canEdit: boolean = false;

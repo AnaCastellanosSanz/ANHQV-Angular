@@ -4,6 +4,7 @@
         [creation]="creation1"
         (onRemove)="removeCreation(creation1.id)"
     ></app-creation>
+    <button class="button__creation" (click)="navigateToCreateCreations()">Añadir personaje</button>
 </div>
 <ng-template #noCreationsFound>
 <p>Error: No se han encontrado creaciones para mostrar.</p>

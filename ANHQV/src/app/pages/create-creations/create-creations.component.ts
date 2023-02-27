@@ -13,9 +13,8 @@ import { map, of, switchMap } from 'rxjs';
 })
 export class CreateCreationsComponent  {
 
-  // Form group: grupo de campos con cierta lógica común
-  // Form Control: Es un campo específico de nuestro formulario con cierta lógica especial que podemos utilizar desde
-  // typescript.
+  //El componente contiene una propiedad creationForm que es de tipo FormGroup. El FormGroup es un grupo de campos de formulario que contiene una lógica común. Cada campo del formulario se define como un FormControl, que es un campo específico de nuestro formulario con cierta lógica especial que se puede utilizar desde TypeScript.
+
   public creationForm?: FormGroup;
   public urlImg: string = '';
   public canEdit: boolean = false;
@@ -56,6 +55,8 @@ export class CreateCreationsComponent  {
     });
   }
 
+  //createNewCreation() que crea una nueva creación o actualiza una existente en el servicio CreationsService. Se llama a createNewCreation() cuando se envía el formulario de la creación.
+  
   public createNewCreation() {
     if (!this.creationForm?.valid) { return; }
     const creationRequest = this.canEdit && this.creationId

@@ -40,7 +40,7 @@ export class CreationsService {
   }
  
   
-  //deleteCreation: elimina un personaje de la API. Luego, utiliza map() para transformar el resultado en un objeto Character. Devuelve un Observable de un solo Character.
+  //deleteCreation: elimina una creación de la API. Luego, utiliza map() para transformar el resultado en un objeto Creations. Devuelve un Observable de una sola creación.
 
   public deleteCreation(id: string): Observable<Creations> {
     return this.apiCreationsService.deleteApiCreations(id).pipe(
@@ -48,7 +48,7 @@ export class CreationsService {
     )
   }
 
-  //createCreation: Crea un nuevo personaje en la API. Luego, utiliza map() para transformar el resultado en un objeto Character. Devuelve un Observable de un solo Character.
+  //createCreation: Crea una nueva creación en la API. Luego, utiliza map() para transformar el resultado en un objeto Creations. Devuelve un Observable de un solo creation.
 
   public createCreation (body: Creations): Observable<Creations> {
     return this.apiCreationsService.createApiCreations(body).pipe(
@@ -56,7 +56,7 @@ export class CreationsService {
     );
   }
 
-  //editCreation: Actualiza un personaje existente en la API. Luego, utiliza map() para transformar el resultado en un objeto Character. Devuelve un Observable de un solo Character.
+  //editCreation: Actualiza una creación existente en la API. Luego, utiliza map() para transformar el resultado en un objeto Creations. Devuelve un Observable de un solo creation.
 
   public editCreation (id: string, body: Creations): Observable<Creations> {
     return this.apiCreationsService.editApiCreations(id, body).pipe(
