@@ -1,8 +1,8 @@
 AQUI NO HAY QUIEN VIVA
 
-https://fotografias.antena3.com/clipping/cmsimages02/2020/03/27/BA49BE1C-D766-4DB0-BDD9-3DE7625D0CA4.png
-
 Proyecto realizado con Angular.
+
+
 
 
 EN QUÉ CONSISTE ESTE PROYECTO
