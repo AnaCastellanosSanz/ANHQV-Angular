@@ -1,27 +1,26 @@
-# ANHQV
+- AQUI NO HAY QUIEN VIVA -
+https://fotografias.antena3.com/clipping/cmsimages02/2020/03/27/BA49BE1C-D766-4DB0-BDD9-3DE7625D0CA4.png
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+Proyecto realizado con Angular.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+EN QUE CONSISTE ESTE PROYECTO
 
-## Code scaffolding
+Este proyecto está basado en la famosa serie de televisión "Aqui no hay quien viva".
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Cada apartado del código está comentado, para un mejor entendimiento de este.
 
-## Build
+Se compone de tres páginas principales:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Listado de personajes: en esta página, se hace una llamada a la Api creada con Mokapi, y se pinta una lista de los personajes de la serie, estos tienen un botón que lleva al detalle, un botón que permite eliminar cada uno de ellos y otro botón que permite editarlos gracias a un formuario, el cual también permite crear personajes nuevos.
 
-## Running unit tests
+- Episodios: en esta página, se hace una llamada a la Api creada con Mokapi, y se pinta una lista de los episodios de la serie, además, cada uno de los elementos tiene un botón de reproducir y pausar el episodio.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Mis creaciones: en esta página, se hace una llamada a la Api creada con Mokapi, y se pinta una lista de mis creaciones, estas tienen un botón que permite eliminar cada uno de ellos y otro botón que permite editarlos gracias a un formuario, el cual también permite añadir nuevas creaciones.
 
-## Running end-to-end tests
+Además, este proyecto tiene una parte de autentificación, la cual no permite crear ni personajes ni añadir nuevas creaciones, en caso de no habernos logueado.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Es una aplicación responsive por lo que puede ser visualizada en cualquier dispositivo.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
